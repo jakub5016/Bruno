@@ -14,4 +14,4 @@ To run this program you have to get __token__ from page: discord.com/developers
 Replace your token with this got from web page in file __TOKEN.txt__.
 
 
-Then run program by typing ``` main.py ``` 
+Then run program by typing ```python main.py ``` 
