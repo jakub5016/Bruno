@@ -2,7 +2,7 @@
 Welcome to Bruno README!
 
 ## Description
-Bruno is an discord bot
+Bruno is an discord bot that uses openai libraries to creates images and respond to user input.
 
 ## Instalation and run
 Install dependencies by running ``` pip install -r requirements ```
