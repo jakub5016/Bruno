@@ -1,5 +1,6 @@
 import discord
 import openai
+from create_help_mess import HELP_MESSAGE
 
 TOKEN = None
 OPENAI_API_KEY = None
@@ -29,6 +30,9 @@ async def on_ready():
 async def on_message(message):
     global IMG_AMMOUT
 
+    if message.content.startswith('!help'):
+        await message.channel.send(HELP_MESSAGE)
+
     if message.content.startswith('!img_amount'):
         try:
             int(message.content[12:])
@@ -42,7 +46,7 @@ async def on_message(message):
             IMG_AMMOUT = int(message.content[12:])
             await message.channel.send(f"Ammout of creating images has been succesfully saved \nCurrent number of images: {IMG_AMMOUT}")
 
-    if message.content.startswith('!create_img'):
+    if message.content.startswith('!img_create'):
         await message.channel.send(f"Generating an image for you input: \"{message.content[12:]}\"")
         print(message.content[12:])
         image = openai.Image.create(
@@ -51,7 +55,7 @@ async def on_message(message):
         size="1024x1024"
         )
         for i in range(IMG_AMMOUT):
-            await message.channel.send(f"Picture no.{i}")
+            await message.channel.send(f"Picture no.{i+1}")
             await message.channel.send(image["data"][i]['url'])
 
     if message.content.startswith('!answer'):
