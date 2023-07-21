@@ -17,6 +17,7 @@ and replacing question mark in file  __OPENAI_API_KEY.txt__ with token you got.
 
 1. Then run program by typing ```python main.py ```
 
+To get info about every command Bruno uses type ``` !help ``` in discord chat.
 ## Bibliography
 
 + [Video Tutorial](https://www.youtube.com/watch?v=SPTfmiYiuok&t=932s)
